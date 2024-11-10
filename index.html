@@ -90,7 +90,7 @@
         <a href="#" onclick="loadBook('Atos')">Atos</a>
         <a href="#" onclick="loadBook('Romanos')">Romanos</a>
         <a href="#" onclick="loadBook('1Corintios')">1 Corintios</a>
-	    <a href="#" onclick="loadBook('2Corintios')">2 Corintios</a>
+		<a href="#" onclick="loadBook('2Corintios')">2 Corintios</a>
         <a href="#" onclick="loadBook('Galatas')">Gálatas</a>
         <a href="#" onclick="loadBook('Efesios')">Efésios</a>
         <a href="#" onclick="loadBook('Filipenses')">Filipenses</a>
@@ -125,6 +125,11 @@
 
             // Atualiza o src do iframe para carregar o livro
             document.getElementById('bookIframe').src = filePath;
+
+            // Após carregar o livro, rola a página para o topo do iframe
+            document.getElementById('bookIframe').onload = function() {
+                document.getElementById('bookIframe').contentWindow.scrollTo(0, 0); // Rola para o topo do conteúdo do iframe
+            };
         }
 
         function scrollToTop() {
