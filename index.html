@@ -10,8 +10,14 @@
             margin: 20px;
         }
 
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
         .menu {
             margin-bottom: 20px;
+            text-align: center;
         }
 
         .menu a {
@@ -31,6 +37,42 @@
             width: 100%;
             height: 500px;
             border: none;
+            display: block;
+            margin: 20px 0;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .menu a {
+                display: block;
+                margin: 5px 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            iframe {
+                height: 400px; /* Menor altura para dispositivos móveis */
+            }
+        }
+
+        /* Estilo para o botão de voltar ao topo */
+        #topButton {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: none;
+            z-index: 999; /* Garantir que o botão fique sempre acima dos outros elementos */
+        }
+
+        #topButton:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -47,6 +89,9 @@
     <!-- Espaço para o iframe carregar o conteúdo do livro -->
     <iframe id="bookIframe" src="" title="Livro"></iframe>
 
+    <!-- Botão de voltar ao topo -->
+    <button id="topButton" onclick="scrollToTop()">Topo</button>
+
     <script>
         function loadBook(bookName) {
             // Caminho para o arquivo HTML do livro
@@ -55,6 +100,20 @@
             // Atualiza o src do iframe para carregar o livro
             document.getElementById('bookIframe').src = filePath;
         }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Mostrar ou esconder o botão de voltar ao topo
+        window.onscroll = function() {
+            const topButton = document.getElementById('topButton');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+        };
     </script>
 </body>
 </html>
