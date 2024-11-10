@@ -124,11 +124,13 @@
             const filePath = `livros/${bookName}.html`;
 
             // Atualiza o src do iframe para carregar o livro
-            document.getElementById('bookIframe').src = filePath;
+            const iframe = document.getElementById('bookIframe');
+            iframe.src = filePath;
 
-            // Após carregar o livro, rola a página para o topo do iframe
-            document.getElementById('bookIframe').onload = function() {
-                document.getElementById('bookIframe').contentWindow.scrollTo(0, 0); // Rola para o topo do conteúdo do iframe
+            // Espera o conteúdo do iframe carregar
+            iframe.onload = function() {
+                // Rola para o topo do conteúdo dentro do iframe
+                iframe.contentWindow.scrollTo(0, 0);
             };
         }
 
