@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Livros do Novo Testamento F35</title>
+    <title>Livros do Novo Testamento</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,11 +22,13 @@
 
         .menu a {
             margin-right: 10px;
-            padding: 10px 20px;
+            padding: 5px 15px;  /* Reduzindo o tamanho do padding */
+            font-size: 14px;    /* Reduzindo o tamanho da fonte */
             background-color: #2c3e50;
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            display: inline-block;
         }
 
         .menu a:hover {
@@ -48,6 +50,8 @@
                 margin: 5px 0;
                 width: 100%;
                 text-align: center;
+                padding: 8px 12px; /* Ajustando o tamanho no mobile */
+                font-size: 16px;   /* Ajustando o tamanho da fonte no mobile */
             }
 
             iframe {
@@ -77,7 +81,7 @@
     </style>
 </head>
 <body>
-    <h1>Livros do Novo Testamento F35</h1>
+    <h1>Livros do Novo Testamento</h1>
     <div class="menu">
         <a href="#" onclick="loadBook('Mateus')">Mateus</a>
         <a href="#" onclick="loadBook('Marcos')">Marcos</a>
@@ -86,6 +90,7 @@
         <a href="#" onclick="loadBook('Atos')">Atos</a>
         <a href="#" onclick="loadBook('Romanos')">Romanos</a>
         <a href="#" onclick="loadBook('1Corintios')">1 Corintios</a>
+	    <a href="#" onclick="loadBook('2Corintios')">2 Corintios</a>
         <a href="#" onclick="loadBook('Galatas')">Gálatas</a>
         <a href="#" onclick="loadBook('Efesios')">Efésios</a>
         <a href="#" onclick="loadBook('Filipenses')">Filipenses</a>
@@ -105,7 +110,6 @@
         <a href="#" onclick="loadBook('3Joao')">3 João</a>
         <a href="#" onclick="loadBook('Judas')">Judas</a>
         <a href="#" onclick="loadBook('Apocalipse')">Apocalipse</a>
-        <!-- Adicione mais livros conforme necessário -->
     </div>
 
     <!-- Espaço para o iframe carregar o conteúdo do livro -->
